@@ -1,0 +1,23 @@
+cfg_fold:
+  - "../data/yellow_20190419/top_tail/"
+cloud:
+  - "../data/yellow_20190419/top_tail/raw/ref_filter.pcd"
+coef_plane:
+  - [0.67119, -0.738486, 0.0643618, -7.05391]
+  - [0.75434, 0.641711, -0.138486, -11.9615]
+  - [-0.00066246, -0.0078894, 0.999969, 1.68296]
+normal_plane:
+  - [-0.67119, 0.738486, -0.0643618] 
+  - [-0.75434, -0.641711, 0.138486] 
+  - [-0.00066246, -0.0078894, 0.999969] 
+planes:
+  - "../data/yellow_20190419/top_tail/plane/ref_plane_1.pcd"
+  - "../data/yellow_20190419/top_tail/plane/ref_plane_2.pcd"
+  - "../data/yellow_20190419/top_tail/plane/ref_plane_3.pcd"
+origin:
+  - [13.4232, 2.50392, -1.65436]
+tf_gt:
+ - [1, 0, 0, 0]
+ - [0, 1, 0, 0]
+ - [0, 0, 1, 0]
+ - [0, 0, 0, 1]

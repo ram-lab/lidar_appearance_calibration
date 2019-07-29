@@ -1,0 +1,64 @@
+# datapoint filter: https://libpointmatcher.readthedocs.io/en/latest/Datafilters/
+
+readingDataPointsFilters:
+  #- BoundingBoxDataPointsFilter:
+      #xMin: -10.0
+      #xMax: 10.0
+      #yMin: -10.0
+      #yMax: 10.0
+      #zMin: -inf
+      #zMax: inf
+      #removeInside: 0
+  - SamplingSurfaceNormalDataPointsFilter:
+      knn: 10      
+
+referenceDataPointsFilters:
+  #- BoundingBoxDataPointsFilter:
+      #xMin: -10.0
+      #xMax: 10.0
+      #yMin: -10.0
+      #yMax: 10.0
+      #zMin: -inf
+      #zMax: inf
+      #removeInside: 0
+  - SamplingSurfaceNormalDataPointsFilter:
+      knn: 10
+
+matcher:
+  KDTreeMatcher:
+    knn: 1
+    epsilon: 0 
+
+outlierFilters:
+  - TrimmedDistOutlierFilter:
+      ratio: 0.75
+
+errorMinimizer:
+  PointToPlaneErrorMinimizer
+
+transformationCheckers:
+  - CounterTransformationChecker:
+      maxIterationCount: 100 # 1000
+  - DifferentialTransformationChecker:
+      minDiffRotErr: 0.0005
+      minDiffTransErr: 0.01
+      smoothLength: 5   
+
+inspector:
+ NullInspector
+
+# inspector:
+#  VTKFileInspector:
+#      baseFileName: pointmatcher-run1
+#      dumpPerfOnExit: 0
+#      dumpStats: 0
+#      dumpIterationInfo: 1 
+#      dumpDataLinks: 0 
+#      dumpReading: 0 
+#      dumpReference: 0 
+
+
+logger:
+  NullLogger
+#  FileLogger
+

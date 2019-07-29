@@ -1,0 +1,6 @@
+<launch> 
+	<node pkg="lidar_appearance_calibration" type="calib_plane_extraction" name="calib_plane_extraction_0_60" 
+		args="pcd $(find lidar_appearance_calibration)/data/simulation_tf_0_alpha_60/cfg.yaml"
+		output="screen"> 
+	</node>	
+</launch>

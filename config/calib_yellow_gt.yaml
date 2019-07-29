@@ -1,0 +1,33 @@
+calib: {
+    lidar_frame: "lidar_link",
+
+    ## static scenario
+    input_topic_top: "/top/rslidar_points",
+    input_topic_front: "/front/rslidar_points",
+    input_topic_tail: "/tail/rslidar_points",
+
+    ## use lidar type
+    use_top_lidar: true,
+    use_front_lidar: true,
+    use_tail_lidar: true,
+    
+    ## use VoxelGrid downsampler
+    # default: false
+    use_downsample: false,
+    #use_downsample: true,
+    # default: 0.1f
+    leaf_size: 0.01f,
+
+    output_topic: "/fusion/rslidar_points",
+
+    ## static tf from rear center lidar to front left/right one
+    # static_transform_publisher: <x y z yaw pitch roll frame_id child_frame_id period_in_ms>
+    # x/y/z offset in meters and yaw/pitch/roll in radians.
+    # (yaw is rotation about Z, pitch is rotation about Y, and roll is rotation about X)
+    ## Pre-used YPR format
+    ## Common-used Quaternion format
+    ## px py pz qx qy qz qw
+    tf_lidar_link_2_lidar_top: [0, 0, 0, 0, 0, 0, 1.0],
+    tf_lidar_link_2_lidar_front: [0.377002, -0.0309009, -1.23236, 0.0058359, 0.0493219, 0.021461, 0.9985353],    
+    tf_lidar_link_2_lidar_tail: [-1.96443, 0.0473154, -1.13756, 0.0095936, -0.0080411, 0.9999208, 0.0012859]
+}
