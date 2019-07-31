@@ -57,5 +57,5 @@ To use the code, pleace cite this paper:
   author={Jiao, Jianhao and Liao, Qinghai and Zhu, Yilong and Liu, Tianyu and Yu, Yang and Fan, Rui and Wang, Lujia and Liu, Ming},
   journal={arXiv preprint arXiv:1904.12116},
   year={2019}
-}
+} 
 ```
