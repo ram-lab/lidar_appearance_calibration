@@ -49,15 +49,13 @@ Test on Ubuntu 16.04, ROS Kinetic
 3. Calibration resut <br>
 	<img src="image/calibration_result.png" width="200"> <br>
 
----
-## LQH's previous work
-1. [x]  ICP(point-plane minimizer, libpointmatcher)
-2. [x]  plane fitting optimization(single shot)
-3. [ ]  auxiliary objects(plane, stick)
-
-## JJH's current work (20190103 - now)
-1. [x] Automatic plane selection and correspondence matching <br>
-    * [x] RANSAC <br>
-	* [x] Order normal <br>
-2. [x] Find rotation between three pairs of normals <br>
-3. [x] Minimize point-to-plane error <br>
+## Reference  
+For the method you can read the paper:  
+```
+@article{jiao2019novel,
+  title={A Novel Dual-Lidar Calibration Algorithm Using Planar Surfaces},
+  author={Jiao, Jianhao and Liao, Qinghai and Zhu, Yilong and Liu, Tianyu and Yu, Yang and Fan, Rui and Wang, Lujia and Liu, Ming},
+  journal={arXiv preprint arXiv:1904.12116},
+  year={2019}
+}
+```
