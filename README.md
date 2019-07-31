@@ -50,7 +50,7 @@ Test on Ubuntu 16.04, ROS Kinetic
 	<img src="image/calibration_result.png" width="200"> <br>
 
 ## Reference  
-For the method you can read the paper:  
+To use the code, pleace cite this paper:
 ```
 @article{jiao2019novel,
   title={A Novel Dual-Lidar Calibration Algorithm Using Planar Surfaces},
