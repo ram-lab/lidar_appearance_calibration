@@ -41,7 +41,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <fstream>
 #include <string>
 
-
 using namespace std;
 
 typedef PointMatcher<float> PM;
@@ -49,12 +48,18 @@ typedef PM::DataPoints DP;
 
 int main(int argc, char *argv[])
 {
-	std::string str_ref = "/home/jjiao/catkin_ws/src/lidar_appearance_calibration/data/white_20190611/top_tail/raw/ref.pcd";
-	std::string str_data = "/home/jjiao/catkin_ws/src/lidar_appearance_calibration/data/white_20190611/top_tail/raw/data.pcd";
-	std::string str_ref_save = "/home/jjiao/catkin_ws/src/lidar_appearance_calibration/data/white_20190611/top_tail/raw/ref_filter.pcd";
-	std::string str_data_save = "/home/jjiao/catkin_ws/src/lidar_appearance_calibration/data/white_20190611/top_tail/raw/data_filter.pcd";
+	if (argc <= 5) 
+	{
+		std::cerr << "Not enough arguments" << std::endl;
+		return 0;
+	}
 
-	// merge pointcloud
+	std::string str_ref(argv[1]);
+	std::string str_data(argv[2]);
+  std::string str_ref_save(argv[3]);
+  std::string str_data_save(argv[4]);
+
+  // merge pointcloud
 	DP ref = DP::load(str_ref);
 	DP data = DP::load(str_data);
 
@@ -88,21 +93,6 @@ int main(int argc, char *argv[])
 			}));
 	ref = subsample->filter(ref);
 
-// 	subsample =
-// 		PM::get().DataPointsFilterRegistrar.create(
-// 			"BoundingBoxDataPointsFilter", PM::Parameters({
-// 			{
-// 				{"xMin", "3.5"},
-// 				{"xMax", "5"},
-// 				{"yMin", "5.5"},
-// 				{"yMax", "13"},
-// 				{"zMin", "-2"},
-// 				{"zMax", "inf"},
-// 				{"removeInside", "1"}
-// 			}
-// 			}));
-// 	ref = subsample->filter(ref);	
-	
 	subsample =
 		PM::get().DataPointsFilterRegistrar.create(
 			"BoundingBoxDataPointsFilter", PM::Parameters({
@@ -118,21 +108,6 @@ int main(int argc, char *argv[])
 			}));
 	data = subsample->filter(data);
 	
-// 	subsample =
-// 		PM::get().DataPointsFilterRegistrar.create(
-// 			"BoundingBoxDataPointsFilter", PM::Parameters({
-// 			{
-// 				{"xMin", "0.0"},
-// 				{"xMax", "2"},
-// 				{"yMin", "-2"},
-// 				{"yMax", "3"},
-// 				{"zMin", "-inf"},
-// 				{"zMax", "inf"},
-// 				{"removeInside", "1"}
-// 			}
-// 			}));
-// 	data = subsample->filter(data);	
-
 	ref.save(str_ref_save);
 	data.save(str_data_save);
 

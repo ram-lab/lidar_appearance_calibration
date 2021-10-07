@@ -1,8 +1,8 @@
 ref_cloud:
-  - "../data/yellow_20190419/top_tail/raw/ref.pcd"
-  - "../data/yellow_20190419/top_tail/raw/ref_filter.pcd"
+  - "../data/example/top_front/raw/ref.pcd"
+  - "../data/example/top_front/raw/ref_filter.pcd"
 data_cloud:
-  - "../data/yellow_20190419/top_tail/raw/data.pcd"
-  - "../data/yellow_20190419/top_tail/raw/data_filter.pcd"
+  - "../data/example/top_front/raw/data.pcd"
+  - "../data/example/top_front/raw/data_filter.pcd"
 cfg_fold:
-  - "../data/yellow_20190419/top_tail/"  
+  - "../data/example/top_front/"  
